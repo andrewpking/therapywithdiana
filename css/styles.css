@@ -1,0 +1,500 @@
+/*Stylesheet for therapywithdiana.com by Drew King*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Typefaces*/
+
+@font-face {
+    font-family: 'julius_sans_oneregular';
+    src: url('../fonts/juliussansone-regular-webfont.woff2') format('woff2'),
+         url('../fonts/juliussansone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/opensans-light-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*sets the size of the body*/
+body{
+    margin: 40px auto;
+    font-family: sans-serif;
+}
+
+.inner{
+    text-align: center;
+    clear: both;
+    display: block;
+    float: none;
+}
+
+#wrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1040px;
+    background: rgba(255,255,255, .93);
+    overflow: hidden;
+    margin-bottom: 20px;
+    font-family: open_sansregular;
+}
+
+/*Gives behavior for the header*/
+
+header{
+    width: 100%;
+    max-width: 1100px;
+}
+
+
+header #primary ul{
+    display: block;
+}
+
+header #primary ul li{
+    font-family: open_sansregular;
+    font-size: 1em;
+    text-align: center;
+    float: left;
+    list-style-type: none;
+    line-height: 2.25em;
+    margin-bottom: 1em;
+    width: 25%;
+}
+
+header #primary ul li a{
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+header #primary ul li a:hover{
+    color: #999;
+}
+
+.home #primary li:nth-child(1) a,
+.about #primary li:nth-child(2) a,
+.contact #primary li:nth-child(3) a,
+.schedule #primary li:nth-child(4) a{
+    color:#999;
+}
+
+/*Text formatting*/
+h1{
+    font-size: 2em;
+}
+
+h1, h2{
+    font-family: julius_sans_oneregular;
+    font-weight: 100;
+    padding: .35em;
+    margin: .35em;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5em;
+    display: block;
+}
+
+h3{
+    margin-bottom: 10px;
+    font-size: 1.25em;
+    font-weight: 600;
+    text-align: center;
+}
+
+p{
+    font-size: 1em;
+    margin-bottom: 10px;
+    line-height: 1.35em;
+    padding: 10px;
+}
+
+ul{
+    font-family: open_sansregular;
+    font-size: 1em;
+    list-style-type:none;
+    padding: 10px;
+}
+
+ul li{
+    text-align: center;
+}
+
+/*Boxes insdie of the body, below the header*/
+
+main{
+    margin: 40px;
+    display: block;
+    clear:both;
+}
+
+.contact main{
+    margin: 0;
+    clear:left;
+    float: left;
+    width: 55%;
+    overflow: visible;
+
+}
+
+.schedule main{
+    height: 400px;
+    background-image: url(../images/schedule.jpg);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.home aside{
+    width: 90%;
+    float: none;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 40px;
+    clear: both;
+}
+
+aside{
+/*    background: lightpink;*/
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    clear: none;
+    border: none;
+    overflow: hidden;
+}
+
+.home main img{
+    width: 100%;
+    padding: 0 80px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+main h2, h3, p{
+    display: block;
+    clear: both;
+}
+
+.home p{
+    text-align: center;
+}
+
+
+.text{
+    width: 60%;
+    float: right;
+}
+
+.row{
+    display: block;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.contactme{
+    float: left;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.col3{
+    width: 33.3%;
+/*    margin: 0 auto;*/
+    float: left;
+    overflow: hidden;
+    display: block;
+}
+
+#headline{
+    float: left;
+    text-align: center;
+    padding: 20px;
+    width:61.7%;
+    overflow: hidden;
+}
+
+.right{
+    float: right;
+    width:33%;
+}
+
+.left{
+    float: left;
+    width: 33%;
+}
+
+footer #secondary{
+    display: block;
+    clear: both;
+    text-align: center;
+}
+
+footer #secondary ul li{
+    color: #666;
+    font-size: .75em;
+    float: left;
+    line-height: 4.17em;
+    list-style-type: none;
+    width: 25%;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+footer #secondary ul li a{
+    text-decoration: none;
+    color: #666;
+}
+
+/*Styles for the web forms*/
+
+fieldset{
+    margin-top: 2.5em;
+    padding: 2.5%;
+    border: none;
+}
+
+
+input{
+    font-size: 1.1em;
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+label{
+    font-family: open_sanslight;
+    font-size: 1.2em;
+    padding: .5em;
+}
+
+input[type=text] {
+    height: 2.5em;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=text]:hover{
+    box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
+}
+
+input[type=email] {
+/*    width: auto;*/
+    height: 2.5em;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+/*    margin-bottom: 1.5em;*/
+}
+
+input[type=email]:hover{
+    box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
+}
+
+input[type=submit]{
+    appearance:none;
+  -webkit-appearance:none;
+    color: #fff;
+    background: #000;
+    font-size: 1em;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    height: 2.5em;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=submit]:hover{
+    color: #ddd;
+    background: #666;
+}
+
+textarea{
+    font-family: open_sansregular;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 540px;
+    height: 22em;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    resize: vertical;
+}
+
+textarea:hover{
+    box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
+}
+
+/*Dynamic Sizing info*/
+
+@media screen and (max-width:1040px){
+    .home main img{
+        width: 100%;
+        max-width: 1040px;
+        padding: 20px;
+    }
+    
+    textarea{
+        height: 20.25em;
+    }
+    
+    body{
+        margin:0 auto;
+    }
+}
+
+@media screen and (max-width:800px){
+    .home main img{
+        border-radius: 0;
+        width: 100%;
+        max-width: 800px;
+        padding: 0;
+    }
+    
+    .home aside{
+        margin: 0 auto;
+    }
+    
+    textarea{
+        height: 15em;
+    }
+    
+    header #primary ul li{
+    font-family: open_sanslight;
+}
+    
+    #headline{
+    width:100%;
+}
+    .right{
+        width: 100%;
+    }
+    
+    .left{
+        padding-top: 70px;
+    }
+    
+    .row .col3{
+        width: 100%;
+        float: none;
+    }
+    
+    main{
+        margin: 0;
+    }
+    
+    main p{
+        margin: 20px;
+    }
+    
+    input{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+    }
+}
+
+@media screen and (max-width:600px){
+    aside{
+        width: 0;
+        display: none;
+    }
+    
+    .home aside{
+        width: 100%;
+        display: block;
+/*        margin: 0;*/
+    }
+    
+    .contact main{
+        width: 100%;
+    }
+    
+    .schedule main{
+        width: 100%;
+    }
+    
+    #headline{
+        max-width: 600px;
+        width: 100%;
+        float: none;
+    }
+    
+    .text{
+        float:none;
+        width: 100%;
+    }
+    
+    .right, .left{
+        max-width: 600px;
+        width: 100%;
+        float:left;
+        margin-bottom: 40px;
+    }
+    
+    footer #secondary ul li{
+    font-size: .67em;
+    line-height: 1.5em;
+    margin-bottom: 50px;
+}
+}
+
+/*Styles for my scheduling script*/
+.spwidget-button-wrapper{
+/*    box-sizing: content-box;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24em;
+    text-align: center;
+    float: none;
+}
+.spwidget-button{
+    font-family: open_sansregular;
+    display: inline-block;
+    width: 15em;
+    padding: 12px 24px;
+    color: #fff !important;
+    background: #666;
+    border: 0;
+    border-radius: 4px;
+    font-size: 1.15em;
+    font-weight: 600;
+    text-decoration: none;
+}
+.spwidget-button:hover{
+    background: #ddd;
+}
+.spwidget-button:active{
+    color: rgba(255, 255, 255, .75) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset;
+}
