@@ -38,18 +38,18 @@ foreach ($_POST as $key => $value) {
 
 
 
-//$from='From: '. $email . "(" . $name . ")" . "\r\n" . 'Bcc: dianaklcsw@aol.com' . "\r\n";
+$from='From: '. $email . "(" . $name . ")";
 // sends bcc to alternate address
 
 //Creates intelligible subject line that shows where it came from
 //$subject = 'Second Message'; // if your client has more than one web site, you can put the site name here.
 
 // for troubleshooting, uncomment the two lines below. Send your form, and you'll get a browser message showing your results.
-//echo "mail ('clientname@domain.com', $subject, $body, $from);";
-//exit();
+// echo "mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $comments, $from);";
+// exit();
 
 //Sends email, with elements created above
 //Replace clientname@domain.com with your client's email address. Put your address here for initial testing, put your client's address for final testing and use.
-mail ('dianaklcsw@gmail.com', $subject, $body, $from);
+mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $comments, $from);
 
 header('Location: thx.html'); // replace "thx.html" with the name and path to your actual thank you page
