@@ -193,13 +193,19 @@ aside{
     overflow: hidden;
 }
 
+.home main{
+    overflow: hidden;
+}
+
 .home main img{
     float: left;
     width: 40%;
+    padding: 0;
+    margin: 20px 40px 40px 0;
+}
+
+img {
     border-radius: 1em;
-    padding: 0 20px;
-    margin-bottom: 40px;
-    margin-top: 20px;
 }
 
 
@@ -366,6 +372,7 @@ textarea:hover{
 }
 
 /* color scheme info */
+
 @media screen and (prefers-color-scheme: dark) {
     body, main, header, footer, #wrapper{
         background-color: black;
@@ -419,8 +426,9 @@ textarea:hover{
 @media screen and (max-width:1002px){
     .home main img{
         width: 40%;
-        border-radius: 1em;
-        margin: 16px 0 50px;
+        padding: 0 40px 0 0;
+        padding: 0;
+        margin: 16px 20px 50px;
     }
     
     textarea{
@@ -536,7 +544,6 @@ textarea:hover{
     }
 
     #headline-img{
-        border-radius: 1em;
         width: 92%;
         padding: 0;
         margin: 20px;
@@ -545,7 +552,6 @@ textarea:hover{
     }
 
     .about .right{
-        border-radius: 1em;
         width: 92%;
         padding: 0;
         margin: 20px;
@@ -554,7 +560,6 @@ textarea:hover{
     }
 
     .about .left{
-        border-radius: 1em;
         width: 92%;
         padding: 0;
         margin: 20px;
@@ -600,7 +605,40 @@ textarea:hover{
     font-size: .67em;
     line-height: 1.5em;
     margin-bottom: 50px;
+    }
 }
+
+@media screen and (max-width: 400px) {
+    img{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .home main img{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #headline-img{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about .right{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about .left {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 /*Styles for my scheduling script*/
