@@ -114,7 +114,9 @@ h2{
     display: block;
 }
 
-h3{
+h3, h2.no-underline{
+    font-family: open_sansregular, sans-serif;
+    border-bottom: none;
     margin-bottom: 10px;
     font-size: 1.25em;
     font-weight: 600;
