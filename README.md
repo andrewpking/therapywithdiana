@@ -27,7 +27,7 @@ This website was conceived as a final project for a web design class undertaken 
 
 - **Informative Pages:** Gain insights into Diana's therapeutic approach, specialization areas, and the benefits of seeking professional mental health guidance.
 
-- **Appointment Booking:** The website provides a convenient way for potential clients to schedule appointments with Diana through an integrated booking system.
+- **Accessibility First:** All pages are well laid out with Responsive Design and include proper roles for elements. This means that the website will work with most accessibility technologies.
 
 - **Contact Information:** Connect with Diana through provided contact details, making it easy to initiate a conversation about the services offered.
 
@@ -37,7 +37,7 @@ This website was conceived as a final project for a web design class undertaken 
 
 - **CSS:** Custom styling to create an inviting and visually consistent layout.
 
-- **JavaScript:** Enhancing user interactivity and powering the appointment booking system.
+- **PHP:** Allowing people to send a message directly through the contact page.
 
 ## Contributions and Maintenance
 
