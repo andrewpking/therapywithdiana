@@ -186,7 +186,7 @@ main{
     background-position: center;
 }
 
-.home aside{
+.home aside, .schedule aside{
     width: 90%;
     float: none;
     justify-content: center;
