@@ -7,55 +7,59 @@
 <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
 
-<body class="schedule"> 
+<body class="schedule" id="wrapper"> 
         
-    <div id="wrapper">
-        <header>
-            <h1>Therapy With Diana</h1>
-            <nav id="primary">
-            <ul>
-                <li><a href="index.html" title="Home">Home</a></li>
-                <li><a href="about.html" title="About">About </a></li>
-                <li><a href="contact.html" title="Contact">Contact</a></li>
-                <li><a href="" title="Schedule">Scheduling</a></li>
-            </ul>
-            </nav><!--End primary-->
-        </header>
-        <main>
-<!--<style>.spwidget-button-wrapper{text-align: center}.spwidget-button{display: inline-block;padding: 12px 24px;color: #fff !important;background: #de6a26;border: 0;border-radius: 4px;font-size: 16px;font-weight: 600;text-decoration: none}.spwidget-button:hover{background: #d15913}.spwidget-button:active{color: rgba(255, 255, 255, .75) !important;box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset}</style>-->
-<!-- Start SimplePractice Booking Widget Embed Code -->
-<div class="spwidget-button-wrapper"><a href="https://therapywithdiana.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="61eb8ba6-4199-4e63-ae96-ccc055555fc5" data-spwidget-scope-uri="therapywithdiana" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind>Request Appointment</a></div>
-<!--End button wrapper-->
-<script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
-<!-- End SimplePractice Booking Widget Embed Code -->
-        </main>
+    <header>
+        <h1>Therapy With Diana</h1>
+        <nav id="primary">
+        <ul>
+            <li><a href="index.html" title="Home">Home</a></li>
+            <li><a href="about.html" title="About">About </a></li>
+            <li><a href="contact.html" title="Contact">Contact</a></li>
+            <li><a href="" title="Schedule">Scheduling</a></li>
+        </ul>
+        </nav><!--End primary-->
+    </header>
 
-        <div class="inner">
-            <h2>Contact Me</h2>
-            <div class="contactme">
-
-                <div class="col3">
-                <a href="https://www.facebook.com/therapywithdiana" title="facebook"><img src="images/facebook.png" alt="facebook"></a>
-                </div><!--End Thirds-->
-           
-                <div class="col3">
-                <a href="contact.html" title="contact"><img src="images/message.png" alt="message"></a>
-                <!--message by Muhammad Tajudin from the Noun Project-->
-                </div><!--End Thirds-->
-            
-                <div class="col3">
-                    <a href="https://www.psychologytoday.com/us/therapists/diana-miller-gig-harbor-wa/790082" title="psychology today"><img src="images/psytoday.png" alt="psychology today"></a>
-                </div><!--End Thirds-->
-            </div><!--End ContactMe-->
-        </div><!--End Inner-->
-    </div><!--End Wrapper-->
+    <main id="row">
+        <h2 class="no-underline">Schedule an Appointment</h2>
+        <!--<style>.spwidget-button-wrapper{text-align: center}.spwidget-button{display: inline-block;padding: 12px 24px;color: #fff !important;background: #de6a26;border: 0;border-radius: 4px;font-size: 16px;font-weight: 600;text-decoration: none}.spwidget-button:hover{background: #d15913}.spwidget-button:active{color: rgba(255, 255, 255, .75) !important;box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset}</style>-->
+        <!-- Start SimplePractice Booking Widget Embed Code -->
+        <section id="button-bg">
+            <div role="button" class="spwidget-button-wrapper">
+                <a href="https://therapywithdiana.clientsecure.me" class="spwidget-button" data-spwidget-scope-id="61eb8ba6-4199-4e63-ae96-ccc055555fc5" data-spwidget-scope-uri="therapywithdiana" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-scope-global data-spwidget-autobind>Request Appointment</a>
+            </div>
+            <!--End button wrapper-->
+            <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
+            <!-- End SimplePractice Booking Widget Embed Code -->
+        </section>   
+    </main>
 
     <footer>
+        <section class="inner">
+            <h2>Contact Me</h2>
+            <nav class="contactme">
+
+                <div role="button" class="col3">
+                    <a href="https://www.facebook.com/therapywithdiana" title="facebook"><img src="images/facebook.png" alt="facebook"></a>
+                </div><!--End Thirds-->
+
+                <div role="button" class="col3">
+                    <a href="contact.html" title="contact"><img src="images/message.png" alt="message"></a>
+                <!--message by Muhammad Tajudin from the Noun Project-->
+                </div><!--End Thirds-->
+
+                <div role="button" class="col3">
+                    <a href="https://www.psychologytoday.com/us/therapists/diana-miller-gig-harbor-wa/790082" title="psychology today"><img src="images/psytoday.png" alt="psychology today"></a>
+                </div><!--End Thirds-->
+
+            </nav><!--End ContactMe-->
+        </section><!--End Inner-->
         <nav id="secondary">
             <ul>
                 <li>Copyright &copy; Therapy With Diana 2020</li>
                 <li>All Rights Reserved</li>
-                <li><a href="" title="Web Design by Drew">Web Design By Drew</a></li>
+                <li><a href="https://andrewpking.github.io/" title="Web Design by Drew">Web Design By Drew</a></li>
                 <li><a href="https://validator.w3.org/check?uri=referer" title="valid">Valid</a></li>
             </ul>
         </nav><!--End secondary-->
