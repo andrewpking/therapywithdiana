@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/*Typefaces*/
+/** Typeface s**/
 
 @font-face {
     font-family: 'julius_sans_oneregular';
@@ -32,7 +32,7 @@
 
 }
 
-/*sets the size of the body*/
+/** sets the size of the body **/
 body{
     margin: 0 auto;
     font-family: sans-serif;
@@ -55,7 +55,7 @@ body{
     font-family: open_sansregular, sans-serif;
 }
 
-/*Gives behavior for the header*/
+/** Gives behavior for the header **/
 
 header{
     width: 100%;
@@ -95,7 +95,8 @@ header #primary ul li a:hover{
     color:#999;
 }
 
-/*Text formatting*/
+/** Text formatting **/
+
 h1{
     font-size: 2em;
 }
@@ -150,7 +151,7 @@ ul li{
     text-align: center;
 }
 
-/*Boxes insdie of the body, below the header*/
+/** Boxes insdie of the body, below the header **/
 
 main{
     margin: 40px;
@@ -167,7 +168,7 @@ main{
 
 }
 
-.schedule main{
+#button-bg{
     height: 400px;
     background-image: url(../images/schedule.jpg);
     background-attachment: fixed;
@@ -222,7 +223,6 @@ img {
 }
 
 .pricing{
-    /*background-color: pink;*/
     width: 100%;
     float: right;
     clear: both;
@@ -290,7 +290,7 @@ footer #secondary ul li a{
     color: #666;
 }
 
-/*Styles for the web forms*/
+/** Styles for the web forms **/
 
 fieldset{
     margin-top: 2.5em;
@@ -325,12 +325,10 @@ input[type=text]:hover{
 }
 
 input[type=email] {
-/*    width: auto;*/
     height: 2.5em;
     padding:10px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-/*    margin-bottom: 1.5em;*/
 }
 
 input[type=email]:hover{
@@ -373,7 +371,7 @@ textarea:hover{
     box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
 }
 
-/* color scheme info */
+/** Color Scheme and Dark Mode **/
 
 @media screen and (prefers-color-scheme: dark) {
     body, main, header, footer, #wrapper{
@@ -423,7 +421,7 @@ textarea:hover{
     }
 }
 
-/*Dynamic Sizing info*/
+/** Dynamic Sizing for Responsive Web Design **/
 
 @media screen and (max-width:1002px){
     .home main img{
@@ -583,11 +581,7 @@ textarea:hover{
         width: 100%;
     }
     
-    .contact main{
-        width: 100%;
-    }
-    
-    .schedule main{
+    main{
         width: 100%;
     }
     
@@ -643,7 +637,7 @@ textarea:hover{
     }
 }
 
-/*Styles for my scheduling script*/
+/** Styles for scheduling widget **/
 .spwidget-button-wrapper{
 /*    box-sizing: content-box;*/
     display: flex;
