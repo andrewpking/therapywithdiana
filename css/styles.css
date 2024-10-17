@@ -50,7 +50,7 @@ body{
     width: 100%;
     max-width: 1040px;
     background: rgba(255,255,255, .93);
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-bottom: 20px;
     font-family: open_sansregular, sans-serif;
 }
