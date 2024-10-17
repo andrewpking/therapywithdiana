@@ -1,4 +1,6 @@
-/*Stylesheet for therapywithdiana.com by Drew King*/
+/** Stylesheet for therapywithdiana.com **/ 
+/** Written by Drew King, provided under MIT License. **/
+
 *{
     margin: 0;
     padding: 0;
@@ -50,7 +52,6 @@ body{
     width: 100%;
     max-width: 1040px;
     background: rgba(255,255,255, .93);
-    /* overflow: hidden; */
     margin-bottom: 20px;
     font-family: open_sansregular, sans-serif;
 }
@@ -124,13 +125,23 @@ h3, h2.no-underline{
     text-align: center;
 }
 
-h4 {
+p.pricing-text {
     font-family: julius_sans_oneregular, sans-serif;
     font-weight: 2000;
     font-size: 1.5em;
     margin: 0.2em;
     text-align: center;
     padding-bottom: 20px;
+}
+
+#pricing h3{
+    font-family: julius_sans_oneregular, sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+    padding: .35em;
+    margin: .35em;
+    border-bottom: 1px solid black;
+    text-align: center;
 }
 
 p{
@@ -244,10 +255,17 @@ img {
 
 .col3{
     width: 33.3%;
-/*    margin: 0 auto;*/
     float: left;
     overflow: hidden;
     display: block;
+}
+
+.billing p {
+    margin-bottom: 0em;
+}
+
+.billing ul {
+    padding-top: 0em;
 }
 
 #headline{
@@ -460,7 +478,6 @@ textarea:hover{
     }
     
     #headline{
-        /*background-color: pink;*/
         width: 60%;
         padding-bottom: 93px;
     }
@@ -503,7 +520,6 @@ textarea:hover{
 
 @media screen and (max-width: 900px){
     #headline{
-        /*background-color: pink;*/
         width: 60%;
         padding: 0;
     }
@@ -639,7 +655,6 @@ textarea:hover{
 
 /** Styles for scheduling widget **/
 .spwidget-button-wrapper{
-/*    box-sizing: content-box;*/
     display: flex;
     justify-content: center;
     align-items: center;
