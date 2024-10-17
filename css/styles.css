@@ -260,6 +260,13 @@ img {
     display: block;
 }
 
+.col4{
+    width: 25%;
+    float: left;
+    overflow: hidden;
+    display: block;
+}
+
 .billing p {
     margin-bottom: 0em;
 }
