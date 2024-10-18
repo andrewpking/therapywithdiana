@@ -1,26 +1,32 @@
-/** JavaScript for form handling **/
+// JavaScript (form-handler.js)
 document.getElementById('myForm').addEventListener('submit', function(event) {
-  event.preventDefault();  // Prevent the default form submission
+  event.preventDefault();
+  document.getElementById('myForm').style.display = 'none';
+  event.preventDefault();
 
-  // Gather form data
   const formData = new FormData(this);
 
-  // Send form data via AJAX to the PHP script
   fetch('formhandler.php', {
     method: 'POST',
     body: formData
   })
-  .then(response => response.text())  // Expecting a text response from PHP
+  .then(response => response.text())
   .then(result => {
-    // Update the ARIA live region and the DOM with the response from PHP
-    document.getElementById('liveRegion').innerHTML = result;
-    document.getElementById('responseMessage').innerHTML = result;
+    try {
+      const parsedResult = JSON.parse(result);
+      document.getElementById('status').textContent = `${parsedResult.status}`;
+      document.getElementById('confirmation').textContent = `${parsedResult.confirmation}`;
+      document.getElementById('message').textContent = `${parsedResult.message}`;
+    } catch (e) {
+      document.getElementById('liveRegion').textContent = `Thank you, your message has been sent:
+
+${result}`;
+    }
+    console.log('Success:', result);
   })
   .catch(error => {
-    // Handle errors and notify the live region
-    const errorMessage = 'Error submitting form!';
-    document.getElementById('liveRegion').innerHTML = errorMessage;
-    document.getElementById('responseMessage').innerHTML = errorMessage;
+    const errorMessage = 'An error occurred. Please try again.';
+    document.getElementById('status').textContent = errorMessage;
     console.error('Error:', error);
   });
 });
