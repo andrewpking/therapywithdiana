@@ -1,64 +1,62 @@
 <?php
-//This is a very simple PHP script that outputs the name of each bit of information in the browser window, and then sends it all to an email address you add to the script.
-//Many thanks to Adam Eivy for his invaluable help with modifying the PHP.
+// This is a very simple PHP script that outputs the name of each bit of information in the browser window, and then sends it all to an email address you add to the script.
+// Many thanks to Adam Eivy for his invaluable help with modifying the PHP.
+// Credit to Drew King for updating this script to work with AJAX.
 
 if (empty($_POST)) {
-	header('Location: '.$_SERVER['HTTP_REFERER']);
-	exit();
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
 }
 
-//Creates function that removes magic escaping, if it's been applied, from values and then removes extra newlines and returns to foil spammers.
+// Function to sanitize user input
 function clear_user_input($value) {
-	if (get_magic_quotes_gpc()) $value=stripslashes($value);
-	$value= str_replace( "\n", '', trim($value));
-	$value= str_replace( "\r", '', $value);
-	return $value;
-	}
-
+    $value = str_replace("\n", '', trim($value));
+    $value = str_replace("\r", '', $value);
+    return $value;
+}
 
 if ($_POST['message'] == 'Please share any comments you have here') $_POST['message'] = '';
 
-//Create body of message by cleaning each field and then appending each name and value to it
+// Sanitize and set name and email
+$name = isset($_POST['name']) ? clear_user_input($_POST['name']) : 'Anonymous';
+$email = isset($_POST['email']) ? clear_user_input($_POST['email']) : 'no-reply@example.com';
 
-$body ="first message:\n";
+// Validate email address
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(["status" => "error", "message" => "Invalid email address."]);
+    exit();
+}
+
+// Create body of message
+$body = "First message:\n";
 
 foreach ($_POST as $key => $value) {
-	if(is_array($value)){ 				// if this post element is a checkbox group or multiple select box
-		$value = implode(', ',$value);	// show array of values selected
+    if (is_array($value)) {
+        $value = implode(', ', $value);
+    }
+    $key = clear_user_input($key);
+    $value = clear_user_input($value);
+    $$key = $value;
 
-	}
-
-	$key = clear_user_input($key);
-	$value = clear_user_input($value);
-	$$key = $value;
-
-	$body .= "$key: $value\n";
+    $body .= "$key: $value\n";
 }
 
+$from = 'From: newclients@therapywithdiana.com' . "\r\n" . 'Reply-To: ' . $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
+// Log the email content for debugging
+error_log("Attempting to send email with the following details:");
+error_log("From: " . $from);
+error_log("Body: " . $body);
 
+// Send email
+$success = mail('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $body, $from);
+//$success = TRUE; // for testing
 
-$from='From: '. $email . "(" . $name . ")";
-// sends bcc to alternate address
-
-//Creates intelligible subject line that shows where it came from
-//$subject = 'Second Message'; // if your client has more than one web site, you can put the site name here.
-
-// for troubleshooting, uncomment the two lines below. Send your form, and you'll get a browser message showing your results.
-// echo "mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $message, $from);";
-// exit();
-
-//Sends email, with elements created above
-//Replace clientname@domain.com with your client's email address. Put your address here for initial testing, put your client's address for final testing and use.
-//$success = mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $message, $from);
-$success = mail ('andrew.phillip.king@gmail.com', 'Inquiry about Therapy With Diana', $message, $from);
-// Check if there were any errors during processing
+// Pass result of mail() function to JavaScript to display message in the browser.
+header('Content-Type: application/json');
 if ($success) {
-	// Send a success response back to JavaScript
-	echo "Thank you, $name! \n Your message:\"$message\", \n has been successfully sent from $email.";
+    echo json_encode(["status" => "Success", "confirmation" => "Thank you, $name! Your message has been successfully sent from $email", "message" => "Your message: \"$message\""]);
 } else {
-	// Send an error response
-	echo "Sorry, there was a problem sending your message. Please try again.";
+    echo json_encode(["status" => "error", "message" => "Sorry, there was a problem sending your message. Please try again."]);
 }
-
 ?>
