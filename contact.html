@@ -22,23 +22,31 @@
     </header>
     <main class="row">
         <section id="text">
+
             <h2>Contact Me</h2>
             <p>When you need someone who you can depend on, do not hesitate, reach out to me and we can schedule your free phone consultation right away.</p>
             <ul>
                 <li><a href="mailto:dianaklcsw@gmail.com" title="email me">dianaklcsw@gmail.com</a></li>
                 <li><a href="tel:801-694-0020" title="cell phone number">801-694-0020</a></li>
             </ul>
-
-            <form action="formhandler.php" method="post">
+            
+            <form id="myForm" method="post">
                 <fieldset>
                     <input label="name" type="text" name="name" placeholder="Name">
                     <input label="email" type="email" name="email" placeholder="Email">
                     <label>Tell me about yourself</label>
-                    <textarea placeholder="Tell me about yourself"  name="comments">
+                    <textarea placeholder="Tell me about yourself" name="message">
                     </textarea>
                     <input label="submit" type="submit" value="Submit">
                 </fieldset>
             </form>
+            <script src="form-handler.js" type="text/javascript"></script>
+            <!-- The aria-live region -->
+            <div aria-live="polite" aria-atomic="true">
+                <h2 class="no-underline" id="status"></h2>
+                <p id="confirmation"></p>
+                <p id="message"></p>
+            </div>
         </section><!--End text-->
     </main>
 
