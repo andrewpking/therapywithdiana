@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Therapy With Diana</title>
 <link href="css/styles.css" type="text/css" rel="stylesheet">
+<script src="form-handler.js" type="javascript"></script>
 </head>
 
 <body class="contact" id="wrapper">
@@ -29,12 +30,15 @@
                 <li><a href="tel:801-694-0020" title="cell phone number">801-694-0020</a></li>
             </ul>
 
-            <form action="formhandler.php" method="post">
+            <!-- The aria-live region -->
+            <div id="liveRegion" aria-live="polite" aria-atomic="true"></div>
+
+            <form id="myForm" method="post">
                 <fieldset>
                     <input label="name" type="text" name="name" placeholder="Name">
                     <input label="email" type="email" name="email" placeholder="Email">
                     <label>Tell me about yourself</label>
-                    <textarea placeholder="Tell me about yourself"  name="comments">
+                    <textarea placeholder="Tell me about yourself" name="message">
                     </textarea>
                     <input label="submit" type="submit" value="Submit">
                 </fieldset>

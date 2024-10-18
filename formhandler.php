@@ -16,7 +16,7 @@ function clear_user_input($value) {
 	}
 
 
-if ($_POST['comments'] == 'Please share any comments you have here') $_POST['comments'] = '';
+if ($_POST['message'] == 'Please share any comments you have here') $_POST['message'] = '';
 
 //Create body of message by cleaning each field and then appending each name and value to it
 
@@ -45,11 +45,20 @@ $from='From: '. $email . "(" . $name . ")";
 //$subject = 'Second Message'; // if your client has more than one web site, you can put the site name here.
 
 // for troubleshooting, uncomment the two lines below. Send your form, and you'll get a browser message showing your results.
-// echo "mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $comments, $from);";
+// echo "mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $message, $from);";
 // exit();
 
 //Sends email, with elements created above
 //Replace clientname@domain.com with your client's email address. Put your address here for initial testing, put your client's address for final testing and use.
-mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $comments, $from);
+//$success = mail ('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $message, $from);
+$success = mail ('andrew.phillip.king@gmail.com', 'Inquiry about Therapy With Diana', $message, $from);
+// Check if there were any errors during processing
+if ($success) {
+	// Send a success response back to JavaScript
+	echo "Thank you, $name! \n Your message:\"$message\", \n has been successfully sent from $email.";
+} else {
+	// Send an error response
+	echo "Sorry, there was a problem sending your message. Please try again.";
+}
 
-header('Location: thx.html'); // replace "thx.html" with the name and path to your actual thank you page
+?>
