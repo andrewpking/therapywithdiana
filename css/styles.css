@@ -1,7 +1,7 @@
-/** Stylesheet for therapywithdiana.com **/ 
+/** Stylesheet for therapywithdiana.com **/
 /** Written by Drew King, provided under MIT License. **/
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,65 +10,66 @@
 /** Typeface s**/
 
 @font-face {
-    font-family: 'julius_sans_oneregular';
-    src: url('../fonts/juliussansone-regular-webfont.woff2') format('woff2'),
-         url('../fonts/juliussansone-regular-webfont.woff') format('woff');
+    font-family: "julius_sans_oneregular";
+    src:
+        url("../fonts/juliussansone-regular-webfont.woff2") format("woff2"),
+        url("../fonts/juliussansone-regular-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'open_sansregular';
-    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-regular-webfont.woff') format('woff');
+    font-family: "open_sansregular";
+    src:
+        url("../fonts/opensans-regular-webfont.woff2") format("woff2"),
+        url("../fonts/opensans-regular-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'open_sanslight';
-    src: url('../fonts/opensans-light-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-light-webfont.woff') format('woff');
+    font-family: "open_sanslight";
+    src:
+        url("../fonts/opensans-light-webfont.woff2") format("woff2"),
+        url("../fonts/opensans-light-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-
 }
 
 /** sets the size of the body **/
-body{
+body {
     margin: 0 auto;
     font-family: sans-serif;
 }
 
-.inner{
+.inner {
     text-align: center;
     clear: both;
     display: block;
     float: none;
 }
 
-#wrapper{
+#wrapper {
     margin: 0 auto;
     width: 100%;
     max-width: 980px;
-    background: rgba(255,255,255, .93);
+    background: rgba(255, 255, 255, 0.93);
     margin-bottom: 20px;
     font-family: open_sansregular, sans-serif;
 }
 
 /** Gives behavior for the header **/
 
-header{
+header {
     width: 100%;
     max-width: 1100px;
 }
 
-
-header #primary ul{
+header #primary ul {
     display: block;
 }
 
-header #primary ul li{
+header #primary ul li {
     font-family: open_sansregular, sans-serif;
     font-size: 1.25em;
     text-align: center;
@@ -79,44 +80,46 @@ header #primary ul li{
     width: 25%;
 }
 
-header #primary ul li a{
+header #primary ul li a {
     display: block;
     text-decoration: none;
     color: #000;
 }
 
-header #primary ul li a:hover{
+header #primary ul li a:hover {
     color: #999;
 }
 
 .home #primary li:nth-child(1) a,
 .about #primary li:nth-child(2) a,
 .contact #primary li:nth-child(3) a,
-.schedule #primary li:nth-child(4) a{
-    color:#999;
+.schedule #primary li:nth-child(4) a {
+    color: #999;
 }
 
 /** Text formatting **/
 
-h1{
+h1 {
     font-size: 2em;
 }
 
-h1, h2{
+h1,
+h2 {
     font-family: julius_sans_oneregular, sans-serif;
     font-weight: 100;
-    padding: .35em;
-    margin: .35em;
+    padding: 0.35em;
+    margin: 0.35em;
     border-bottom: 1px solid black;
     text-align: center;
 }
 
-h2{
+h2 {
     font-size: 1.5em;
     display: block;
 }
 
-h3, h2.no-underline{
+h3,
+h2.no-underline {
     font-family: open_sansregular, sans-serif;
     border-bottom: none;
     margin-bottom: 10px;
@@ -134,59 +137,59 @@ p.pricing-text {
     padding-bottom: 20px;
 }
 
-#pricing h3{
+#pricing h3 {
     font-family: julius_sans_oneregular, sans-serif;
     font-weight: 100;
     font-size: 1.5em;
-    padding: .35em;
-    margin: .35em;
+    padding: 0.35em;
+    margin: 0.35em;
     border-bottom: 1px solid black;
     text-align: center;
 }
 
-p{
+p {
     font-size: 1em;
     margin-bottom: 10px;
     line-height: 1.35em;
     padding: 10px;
 }
 
-ul{
+ul {
     font-family: open_sansregular, sans-serif;
     font-size: 1em;
-    list-style-type:none;
+    list-style-type: none;
     padding: 10px;
 }
 
-ul li{
+ul li {
     text-align: center;
 }
 
 /** Boxes insdie of the body, below the header **/
 
-main{
+main {
     margin: 40px;
     display: block;
-    clear:both;
+    clear: both;
 }
 
-.contact main{
+.contact main {
     margin: 0;
-    clear:left;
+    clear: left;
     float: left;
     width: 55%;
     overflow: visible;
-
 }
 
-#button-bg{
+#button-bg {
     height: 400px;
     background-image: url(../images/schedule.jpg);
     background-attachment: fixed;
     background-position: center;
 }
 
-.home aside, .schedule aside{
+.home aside,
+.schedule aside {
     width: 90%;
     float: none;
     justify-content: center;
@@ -196,7 +199,7 @@ main{
     margin: 40px;
 }
 
-aside{
+aside {
     width: 40%;
     margin: 0;
     padding: 0;
@@ -207,11 +210,11 @@ aside{
     overflow: hidden;
 }
 
-.home main{
+.home main {
     overflow: hidden;
 }
 
-.home main img{
+.home main img {
     float: left;
     width: 40%;
     padding: 0;
@@ -222,45 +225,47 @@ img {
     border-radius: 1em;
 }
 
-
-.left-text{
+.left-text {
     width: 60%;
     float: right;
 }
 
-.right-text{
+.right-text {
     width: 60%;
     float: left;
 }
 
-.pricing{
+.pricing {
     width: 100%;
     float: right;
     clear: both;
 }
 
-.row{
+.row {
     display: block;
     overflow: hidden;
     float: left;
     margin-bottom: 20px;
 }
 
-.contactme{
+.contactme {
     float: left;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
     width: 100%;
 }
 
-.col3{
+.col3 {
     width: 33.3%;
     float: left;
     overflow: hidden;
     display: block;
 }
 
-.col4{
+.col4 {
     width: 25%;
     float: left;
     overflow: hidden;
@@ -275,31 +280,31 @@ img {
     padding-top: 0em;
 }
 
-#headline{
+#headline {
     float: left;
     text-align: center;
     padding: 20px;
-    width:61.7%;
+    width: 61.7%;
     overflow: hidden;
 }
 
-.right{
+.right {
     float: right;
-    width:33%;
+    width: 33%;
 }
 
-.left{
+.left {
     float: left;
     width: 33%;
 }
 
-footer #secondary{
+footer #secondary {
     display: block;
     clear: both;
     text-align: center;
 }
 
-footer #secondary ul li{
+footer #secondary ul li {
     color: #666;
     font-size: 1.25em;
     float: left;
@@ -310,21 +315,20 @@ footer #secondary ul li{
     margin-bottom: 20px;
 }
 
-footer #secondary ul li a{
+footer #secondary ul li a {
     text-decoration: none;
     color: #666;
 }
 
 /** Styles for the web forms **/
 
-fieldset{
+fieldset {
     margin-top: 2.5em;
     padding: 2.5%;
     border: none;
 }
 
-
-input{
+input {
     font-size: 1.1em;
     float: left;
     width: 50%;
@@ -332,115 +336,143 @@ input{
     display: block;
 }
 
-label{
+label {
     font-family: open_sanslight, sans-serif;
     font-size: 1.2em;
-    padding: .5em;
+    padding: 0.5em;
 }
 
-input[type=text] {
+input[type="text"] {
     height: 2.5em;
-    padding:10px;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-input[type=text]:hover{
-    box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
+input[type="text"]:hover {
+    box-shadow: 0 0 15px 4px rgba(0, 230, 250, 0.16);
 }
 
-input[type=email] {
+input[type="email"] {
     height: 2.5em;
-    padding:10px;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-input[type=email]:hover{
-    box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
+input[type="email"]:hover {
+    box-shadow: 0 0 15px 4px rgba(0, 230, 250, 0.16);
 }
 
-input[type=submit]{
-    appearance:none;
-  -webkit-appearance:none;
+input[type="submit"] {
+    appearance: none;
+    -webkit-appearance: none;
     color: #fff;
-    background: #000;
+    background: #333;
     font-size: 1em;
     width: 100%;
     float: none;
     margin: 0 auto;
     height: 2.5em;
-    padding:10px;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-input[type=submit]:hover{
+input[type="submit"]:hover {
     color: #ddd;
     background: #666;
 }
 
-textarea{
+textarea {
     font-family: open_sansregular, sans-serif;
     margin: 10px 0;
     width: 100%;
     max-width: 540px;
     height: 22em;
-    padding:10px;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     resize: vertical;
 }
 
-textarea:hover{
-    box-shadow:0 0 15px 4px rgba(0,230,250,0.16);
+textarea:hover {
+    box-shadow: 0 0 15px 4px rgba(0, 230, 250, 0.16);
+}
+
+/** Styles for footer image links **/
+
+.flex4 {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    a img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 /** Color Scheme and Dark Mode **/
 
 @media screen and (prefers-color-scheme: dark) {
-    body, main, header, footer, #wrapper{
-        background-color: black;
+    body,
+    main,
+    header,
+    footer,
+    #wrapper {
+        background-color: #222;
     }
 
-    p, h1, h2, h3, h4, li, a {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    li,
+    a {
         color: #fff;
     }
 
-    a img{
-        -webkit-filter:invert(100%);
-        filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1');
+    a img {
+        -webkit-filter: invert(100%);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(invert='1');
     }
 
-    header #primary ul li a{
+    header #primary ul li a {
         display: block;
         text-decoration: none;
         color: #fff;
     }
 
-    header #primary ul li a:hover{
+    header #primary ul li a:hover {
         color: #bbb;
     }
 
     .home #primary li:nth-child(1) a,
     .about #primary li:nth-child(2) a,
     .contact #primary li:nth-child(3) a,
-    .schedule #primary li:nth-child(4) a{
-        color:#bbb;
+    .schedule #primary li:nth-child(4) a {
+        color: #bbb;
     }
 
-    footer #secondary ul li{
+    footer #secondary ul li {
         color: #fff;
         font-size: 1.25em;
         float: left;
         line-height: 1.5em;
         list-style-type: none;
         width: 25%;
-        background: #000;
+        background: #222;
         margin-bottom: 20px;
     }
 
-    footer #secondary ul li a{
+    footer #secondary ul li a {
         text-decoration: none;
         color: #fff;
     }
@@ -448,107 +480,107 @@ textarea:hover{
 
 /** Dynamic Sizing for Responsive Web Design **/
 
-@media screen and (max-width:977px){
-    .home main img{
+@media screen and (max-width: 977px) {
+    .home main img {
         width: 40%;
         padding: 0 40px 0 0;
         padding: 0;
         margin: 16px 20px 50px;
     }
-    
-    textarea{
+
+    textarea {
         height: 20.25em;
     }
-    
-    body{
-        margin:0 auto;
+
+    body {
+        margin: 0 auto;
     }
 }
 
-@media screen and (max-width:950px){
-    .home main img{
+@media screen and (max-width: 950px) {
+    .home main img {
         width: 45%;
         padding: 0;
         margin: 20px 40px;
     }
-    
-    .home aside{
+
+    .home aside {
         margin: 0 auto;
     }
-    
-    textarea{
+
+    textarea {
         height: 15em;
     }
-    
-    header #primary ul li{
+
+    header #primary ul li {
         font-family: open_sanslight, sans-serif;
     }
-    
-    #headline{
+
+    #headline {
         width: 60%;
         padding-bottom: 93px;
     }
 
-    .about .right{
+    .about .right {
         float: right;
         width: 40%;
         padding: 0 20px;
     }
 
-    .about .left{
+    .about .left {
         float: left;
         width: 40%;
         padding: 0 20px;
     }
 
-    .about h3{
+    .about h3 {
         clear: none;
     }
 
-    .about .text{
+    .about .text {
         float: right;
     }
-    
-    main .about{
+
+    main .about {
         margin: 0;
     }
-    
-    main p{
+
+    main p {
         margin: 20px;
     }
-    
-    input{
-    float: left;
-    width: 100%;
-    margin-bottom: 10px;
-    display: block;
+
+    input {
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+        display: block;
     }
 }
 
-@media screen and (max-width: 900px){
-    #headline{
+@media screen and (max-width: 900px) {
+    #headline {
         width: 60%;
         padding: 0;
     }
 }
 
 @media screen and (max-width: 737px) {
-    #headline{
+    #headline {
         width: 100%;
     }
 
-    #headline-img{
+    #headline-img {
         width: 0;
     }
 
-    .row .col3{
+    .row .col3 {
         width: 100%;
         float: none;
     }
 }
 
-@media screen and (max-width:650px){
-    .home main img{
+@media screen and (max-width: 650px) {
+    .home main img {
         width: 92%;
         padding: 0;
         margin: 0 20px 0;
@@ -556,17 +588,17 @@ textarea:hover{
         clear: both;
     }
 
-    aside{
+    aside {
         width: 0;
         display: none;
     }
-    
-    .home aside{
+
+    .home aside {
         width: 100%;
         display: block;
     }
 
-    #headline-img{
+    #headline-img {
         width: 92%;
         padding: 0;
         margin: 20px;
@@ -574,7 +606,7 @@ textarea:hover{
         clear: both;
     }
 
-    .about .right{
+    .about .right {
         width: 92%;
         padding: 0;
         margin: 20px;
@@ -582,7 +614,7 @@ textarea:hover{
         clear: both;
     }
 
-    .about .left{
+    .about .left {
         width: 92%;
         padding: 0;
         margin: 20px;
@@ -590,62 +622,63 @@ textarea:hover{
         clear: both;
     }
 
-    .about h3{
+    .about h3 {
         clear: none;
     }
 
-    .about .left-text{
+    .about .left-text {
         float: none;
         width: 100%;
     }
 
-    .about .right-text{
+    .about .right-text {
         float: none;
         width: 100%;
     }
-    
-    main .about, .contact main{
+
+    main .about,
+    .contact main {
         width: 100%;
     }
-    
-    #headline{
+
+    #headline {
         max-width: 650px;
         width: 100%;
         float: none;
         padding-bottom: 0;
     }
-    
-    .text{
-        float:none;
+
+    .text {
+        float: none;
         width: 100%;
     }
-    
-    footer #secondary ul li{
-    margin-bottom: 4em;
+
+    footer #secondary ul li {
+        margin-bottom: 4em;
     }
 }
 
 @media screen and (max-width: 450px) {
-    img{
+    img {
         margin: 0;
         padding: 0;
         width: 100%;
         border-radius: 0;
     }
 
-    .home main img{
+    .home main img {
         width: 100%;
         padding: 0;
         margin: 0;
     }
 
-    #headline-img{
+    #headline-img {
         width: 100%;
         padding: 0;
         margin: 0;
     }
 
-    .about .right{
+    .about .right {
         width: 100%;
         padding: 0;
         margin: 0;
@@ -661,15 +694,13 @@ textarea:hover{
         width: 100%;
     }
 
-
-    footer #secondary ul li{
+    footer #secondary ul li {
         font-size: 1.25em;
         line-height: 1.5em;
         margin-bottom: 1.5em;
         width: 50%;
     }
 
-        
     footer #secondary ul {
         width: 100%;
     }
@@ -678,11 +709,9 @@ textarea:hover{
         display: flex;
         flex-wrap: wrap;
     }
-    
 }
 
 @media screen and (max-width: 250px) {
-
     footer #secondary ul {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -698,7 +727,6 @@ textarea:hover{
 }
 
 @media screen and (max-width: 100px) {
-
     footer #secondary ul {
         flex-direction: column;
         flex-wrap: nowrap;
