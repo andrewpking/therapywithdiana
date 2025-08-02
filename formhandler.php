@@ -12,10 +12,7 @@ if (empty($_POST)) {
 function clear_user_input($value)
 {
     $value = htmlspecialchars($value, ENT_QUOTES, "UTF-8");
-    $value = strip_tags(
-        $value,
-        allowed_tags: ["b", "i", "em", "strong", "p", "br"],
-    );
+    $value = strip_tags($value, "<b><i><em><strong><p><br>");
     $value = stripslashes($value);
     $value = trim($value);
     return $value;
@@ -84,7 +81,7 @@ error_log("Body: " . $body);
 // Send email
 $success = mail(
     "newclients@therapywithdiana.com",
-    "Inquiry about Therapy With Diana",
+    "{$name} - Inquiry about Therapy With Diana",
     $body,
     $from,
 );
@@ -104,5 +101,9 @@ if ($success) {
         "message" =>
             "Sorry, there was a problem sending your message. Please try again.",
     ]);
+    error_log("Failed to send email with the following details:");
+    error_log("From: " . $from);
+    error_log("Body: " . $body);
+    error_log("Error: " . error_get_last()["message"]);
 }
 ?>

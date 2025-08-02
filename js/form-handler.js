@@ -8,14 +8,19 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const formData = new FormData(this);
 
   function purifyInput(input) {
-    const sanitizedInput = DOMPurify.sanitize(input, {
-      ALLOWED_TAGS: ["b", "i", "em", "strong", "p", "br"],
-      ALLOWED_ATTR: [],
-    });
-    return sanitizedInput;
+    if (window.DOMPurify) {
+      const sanitizedInput = DOMPurify.sanitize(input, {
+        ALLOWED_TAGS: ["b", "i", "em", "strong", "p", "br"],
+        ALLOWED_ATTR: [],
+      });
+      return sanitizedInput;
+    } else {
+      console.error("DOMPurify is not loaded!");
+      return input;
+    }
   }
 
-  fetch("formhandler.php", {
+  fetch("../formhandler.php", {
     method: "POST",
     body: formData,
   })
