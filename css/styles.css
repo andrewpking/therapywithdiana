@@ -445,7 +445,27 @@ textarea:hover {
 
     a img {
         -webkit-filter: invert(100%);
-        filter: progid:DXImageTransform.Microsoft.BasicImage(invert='1');
+        filter: invert(100%);
+    }
+
+    header #menu-toggle {
+        display: inline-block;
+        border: none;
+        background-color: transparent;
+
+        &:focus,
+        &:active,
+        &:hover {
+            img {
+                filter: invert(40%);
+            }
+        }
+
+        img {
+            filter: invert(80%);
+            width: 24px;
+            height: 24px;
+        }
     }
 
     header #primary ul li a {
@@ -682,7 +702,7 @@ textarea:hover {
         &:focus,
         &:active,
         &:hover {
-            color: #333;
+            filter: invert(40%);
         }
 
         img {
