@@ -9,7 +9,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   function purifyInput(input) {
     const sanitizedInput = DOMPurify.sanitize(input, {
-      ALLOWED_TAGS: [],
+      ALLOWED_TAGS: ["b", "i", "em", "strong", "p", "br"],
       ALLOWED_ATTR: [],
     });
     return sanitizedInput;
@@ -28,7 +28,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
           `${parsedResult.status}`;
         document.getElementById("confirmation").textContent =
           `${parsedResult.confirmation}`;
-        document.getElementById("message").textContent = `${message}`;
+        document.getElementById("message").innerHTML = `${message}`;
       } catch (e) {
         document.getElementById("liveRegion").textContent =
           `Thank you, your message has been sent:

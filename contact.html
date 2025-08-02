@@ -43,13 +43,21 @@
                     phone consultation right away.
                 </p>
 
-                <form id="myForm" method="post">
+                <form id="myForm" method="post" autocomplete="on">
                     <fieldset>
                         <input
-                            label="name"
+                            label="first_name"
                             type="text"
-                            name="name"
-                            placeholder="Name"
+                            name="first_name"
+                            placeholder="First Name"
+                            autocomplete="given-name"
+                        />
+                        <input
+                            label="last_name"
+                            type="text"
+                            name="last_name"
+                            placeholder="Last Name"
+                            autocomplete="family-name"
                         />
                         <input
                             label="email"
@@ -57,12 +65,19 @@
                             name="email"
                             placeholder="Email"
                         />
-                        <label>Tell me about yourself</label>
+                        <input
+                            label="phone"
+                            type="tel"
+                            name="phone"
+                            placeholder="Phone Number"
+                            autocomplete="tel"
+                        />
+                        <label id="message_label">Tell me about yourself</label>
                         <textarea
-                            placeholder="Tell me about yourself"
+                            label="message_label"
                             name="message"
-                        >
-                        </textarea>
+                            autocomplete="off"
+                        ></textarea>
                         <input label="submit" type="submit" value="Submit" />
                     </fieldset>
                 </form>

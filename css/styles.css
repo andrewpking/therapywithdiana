@@ -122,9 +122,18 @@ h2 {
     display: block;
 }
 
-h3,
-h2.no-underline {
+h3 {
     font-family: open_sansregular, sans-serif;
+    border-bottom: none;
+    margin-bottom: 10px;
+    font-size: 1.35em;
+    font-weight: 600;
+    text-align: center;
+}
+
+h2.no-underline {
+    font-family: julius_sans_oneregular, sans-serif;
+    font-weight: 600;
     border-bottom: none;
     margin-bottom: 10px;
     font-size: 1.35em;
@@ -357,14 +366,18 @@ input[type="text"]:hover {
     box-shadow: 0 0 15px 4px rgba(0, 230, 250, 0.16);
 }
 
-input[type="email"] {
+input[type="email"],
+input[type="tel"] {
     height: 2.5em;
     padding: 10px;
     border: 0;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-input[type="email"]:hover {
+input[type="email"]:hover,
+input[type="email"]:focus,
+input[type="tel"]:hover,
+input[type="tel"]:focus {
     box-shadow: 0 0 15px 4px rgba(0, 230, 250, 0.16);
 }
 
@@ -482,6 +495,12 @@ textarea:hover {
     .contact #primary li:nth-child(3) a,
     .schedule #primary li:nth-child(4) a {
         color: #bbb;
+    }
+
+    fieldset label {
+        float: left;
+        clear: both;
+        color: #fff;
     }
 
     footer #secondary ul li {

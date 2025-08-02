@@ -4,44 +4,77 @@
 // Credit to Drew King for updating this script to work with AJAX.
 
 if (empty($_POST)) {
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
     exit();
 }
 
-// Function to sanitize user input
-function clear_user_input($value) {
-    $value = str_replace("\n", '', trim($value));
-    $value = str_replace("\r", '', $value);
+// Function to sanitize user input for HTML
+function clear_user_input($value)
+{
+    $value = htmlspecialchars($value, ENT_QUOTES, "UTF-8");
+    $value = strip_tags(
+        $value,
+        allowed_tags: ["b", "i", "em", "strong", "p", "br"],
+    );
+    $value = stripslashes($value);
+    $value = trim($value);
     return $value;
 }
 
-if ($_POST['message'] == 'Please share any comments you have here') $_POST['message'] = '';
+if ($_POST["message"] == "Please share any comments you have here") {
+    $_POST["message"] = "";
+}
 
 // Sanitize and set name and email
-$name = isset($_POST['name']) ? clear_user_input($_POST['name']) : 'Anonymous';
-$email = isset($_POST['email']) ? clear_user_input($_POST['email']) : 'no-reply@example.com';
+$first_name = isset($_POST["first_name"])
+    ? clear_user_input($_POST["first_name"])
+    : "Anonymous";
+$last_name = isset($_POST["last_name"])
+    ? clear_user_input($_POST["last_name"])
+    : "Doe";
+$name = "{$first_name} {$last_name}";
+$email = isset($_POST["email"])
+    ? clear_user_input($_POST["email"])
+    : "no-reply@example.com";
+$tel = isset($_POST["phone"]) ? clear_user_input($_POST["phone"]) : "";
 
 // Validate email address
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(["status" => "error", "message" => "Invalid email address."]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Invalid email address.",
+    ]);
+    exit();
+}
+
+// Validate phone number
+
+$digits = preg_replace("/\D/", "", $tel);
+
+if (strlen($digits) < 10 || strlen($digits) > 15) {
+    echo json_encode([
+        "status" => "error",
+        "message" => "Invalid phone number.",
+    ]);
     exit();
 }
 
 // Create body of message
-$body = "First message:\n";
+$sanitized_message = clear_user_input($_POST["message"]);
+$body = "From TherapyWithDiana contact form:\n\n{$sanitized_message}";
 
-foreach ($_POST as $key => $value) {
-    if (is_array($value)) {
-        $value = implode(', ', $value);
-    }
-    $key = clear_user_input($key);
-    $value = clear_user_input($value);
-    $$key = $value;
+$body .= "\n\n{$name}";
+$body .= "\n{$email}";
+$body .= "\n{$digits}";
 
-    $body .= "$key: $value\n";
-}
-
-$from = 'From: newclients@therapywithdiana.com' . "\r\n" . 'Reply-To: ' . $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+$from =
+    "From: newclients@therapywithdiana.com" .
+    "\r\n" .
+    "Reply-To: " .
+    $email .
+    "\r\n" .
+    "X-Mailer: PHP/" .
+    phpversion();
 
 // Log the email content for debugging
 error_log("Attempting to send email with the following details:");
@@ -49,14 +82,27 @@ error_log("From: " . $from);
 error_log("Body: " . $body);
 
 // Send email
-$success = mail('newclients@therapywithdiana.com', 'Inquiry about Therapy With Diana', $body, $from);
+$success = mail(
+    "newclients@therapywithdiana.com",
+    "Inquiry about Therapy With Diana",
+    $body,
+    $from,
+);
 //$success = TRUE; // for testing
 
 // Pass result of mail() function to JavaScript to display message in the browser.
-header('Content-Type: application/json');
+header("Content-Type: application/json");
 if ($success) {
-    echo json_encode(["status" => "Success", "confirmation" => "Thank you, $name! Your message has been successfully sent from $email", "message" => "Your message: \"$message\""]);
+    echo json_encode([
+        "status" => "Success",
+        "confirmation" => "Thank you, {$name}! Your message has been successfully sent from {$email}.",
+        "message" => nl2br("Your message:\n \"{$body}\""),
+    ]);
 } else {
-    echo json_encode(["status" => "error", "message" => "Sorry, there was a problem sending your message. Please try again."]);
+    echo json_encode([
+        "status" => "error",
+        "message" =>
+            "Sorry, there was a problem sending your message. Please try again.",
+    ]);
 }
 ?>
