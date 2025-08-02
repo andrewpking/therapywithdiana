@@ -449,7 +449,6 @@ textarea:hover {
     }
 
     header #menu-toggle {
-        display: inline-block;
         border: none;
         background-color: transparent;
 
@@ -709,14 +708,6 @@ textarea:hover {
             width: 24px;
             height: 24px;
         }
-    }
-
-    header #primary {
-        display: none;
-    }
-
-    header #primary.open {
-        display: block;
     }
 
     img {
