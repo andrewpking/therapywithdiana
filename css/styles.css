@@ -509,7 +509,8 @@ textarea:hover {
         color: #bbb;
     }
 
-    fieldset label {
+    fieldset label,
+    fieldset legend {
         float: left;
         clear: both;
         color: #fff;
