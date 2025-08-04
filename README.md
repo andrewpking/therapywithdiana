@@ -21,6 +21,8 @@ Visit the live website: [therapywithdiana.com](https://www.therapywithdiana.com)
 
 This website was conceived as a final project for a web design class undertaken at Seattle Central College in June 2020. Drawing upon the principles and techniques learned during the course, the author embarked on crafting a visually appealing and user-friendly online platform that could effectively communicate Diana's dedication to mental health care.
 
+Since then, the website has undergone several updates and improvements, including accessibility enhancements to the contact form and navigation, as well as security enhancements to prevent XSS attacks by filtering user input in the contact form.
+
 ## Key Features
 
 - **Responsive Design:** The website seamlessly adapts to various screen sizes, ensuring optimal user experience across devices ranging from smartphones to desktop computers.
@@ -38,6 +40,8 @@ This website was conceived as a final project for a web design class undertaken 
 - **CSS:** Custom styling to create an inviting and visually consistent layout.
 
 - **PHP:** Allowing people to send a message directly through the contact page.
+
+- **JavaScript:** Improved mobile layout and navigation, accessibility enhancements to contact form.
 
 ## Contributions and Maintenance
 
