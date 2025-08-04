@@ -45,35 +45,48 @@
 
                 <form id="myForm" method="post" autocomplete="on">
                     <fieldset>
+                        <label class="sr-only" for="first_name"
+                            >First Name</label
+                        >
                         <input
+                            id="first_name"
                             label="first_name"
                             type="text"
                             name="first_name"
                             placeholder="First Name"
                             autocomplete="given-name"
                         />
+                        <label class="sr-only" for="last_name">Last Name</label>
                         <input
+                            id="last_name"
                             label="last_name"
                             type="text"
                             name="last_name"
                             placeholder="Last Name"
                             autocomplete="family-name"
                         />
+                        <label class="sr-only" for="email">Email</label>
                         <input
+                            id="email"
                             label="email"
                             type="email"
                             name="email"
                             placeholder="Email"
                         />
+                        <label class="sr-only" for="phone">Phone Number</label>
                         <input
+                            id="phone"
                             label="phone"
                             type="tel"
                             name="phone"
                             placeholder="Phone Number"
                             autocomplete="tel"
                         />
-                        <label id="message_label">Tell me about yourself</label>
+                        <label for="message_label"
+                            >Tell me about yourself</label
+                        >
                         <textarea
+                            id="message_label"
                             label="message_label"
                             name="message"
                             autocomplete="off"
@@ -83,7 +96,11 @@
                 </form>
                 <!-- The aria-live region -->
                 <div aria-live="polite" aria-atomic="true">
-                    <h2 class="no-underline" id="status"></h2>
+                    <h2
+                        aria-label="Submit Status"
+                        class="no-underline"
+                        id="status"
+                    ></h2>
                     <p id="confirmation"></p>
                     <p id="message"></p>
                     <p id="liveRegion"></p>
